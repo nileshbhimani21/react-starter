@@ -1,0 +1,58 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+$primary: #43b028;
+$primary-hover: #2c8816;
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.btn {
+  padding: 13px 20px;
+  border-radius: 30px;
+  @extend .fw-600;
+  @extend .fs-16;
+}
+.btn-primary {
+  background: $primary;
+  border-color: $primary;
+  &:hover {
+    background: $primary-hover;
+    border-color: $primary-hover;
+  }
+}
+.btn-category {
+  width: 130px;
+  height: 71px;
+  box-shadow: 0px 6px 25px rgba(7, 6, 6, 0.08);
+  border-radius: 3px;
+  border: none;
+  &.active,
+  &:hover {
+    background: linear-gradient(147.67deg, #43b028 24.24%, #fbce2e 145.04%);
+    color: #fff;
+  }
+}
+main {
+  min-height: calc(100vh - 112px);
+  padding: 60px 0;
+}
