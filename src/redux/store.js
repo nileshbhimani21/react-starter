@@ -2,7 +2,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { reduxBatch } from "@manaflair/redux-batch";
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-// import { persistStore } from "redux-persist";
+import { persistStore } from "redux-persist";
 import { rootReducer } from "./rootReducer";
 
 const middleware = [
@@ -32,6 +32,6 @@ const store = configureStore({
  * @see https://github.com/rt2zz/redux-persist#persiststorestore-config-callback
  * @see https://github.com/rt2zz/redux-persist#persistor-object
  */
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 export default store;

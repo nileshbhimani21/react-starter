@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default function Shop({ data }) {
     return (
         <Col lg={3} className="mb-3">
-            <div className='shadow rounded'>
+            <div className='shadow rounded h-100'>
                 <img src={data?.image} alt="shop" />
                 <div className='px-3 py-2'>
                     <div className='fs-20 fw-600'>{data?.name}</div>

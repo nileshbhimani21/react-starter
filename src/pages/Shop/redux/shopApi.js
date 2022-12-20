@@ -1,12 +1,12 @@
 import axios from "axios";
-import { HomeActions } from "./homeAction";
+import { ShopActions } from "./shopAction";
 import { toast } from 'react-toastify';
 import { getErrorMsg } from "../../../utils/GetErrorMsg";
 
-export const getShops = () => {
+export const getProducts = () => {
   return async (dispatch) => {
     try {
-      dispatch(HomeActions.getShopsStart());
+      dispatch(ShopActions.getProductsStart());
       const data = await axios({
         method: "GET",
         url: `API URL`,
@@ -15,13 +15,13 @@ export const getShops = () => {
         },
       });
       if (data.code === 200) {
-        return dispatch(HomeActions.getShopsSuccess(data.data));
+        return dispatch(ShopActions.getProductsSuccess(data.data));
       } else {
-       dispatch(HomeActions.getShopsError(getErrorMsg(data)));
+       dispatch(ShopActions.getProductsError(getErrorMsg(data)));
       }
     } catch (error) {
       toast.error(error.message)
-      return dispatch(HomeActions.getProductsError(error.message));
+      return dispatch(ShopActions.getProductsError(error.message));
     }
   };
 };

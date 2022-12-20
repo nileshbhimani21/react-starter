@@ -16,8 +16,6 @@ const initialState = {
     },
   ],
   category: ["All", "Asian", "Fruits", "Vegetables"],
-  products: [],
-
 };
 
 export const reducer = (state = initialState, action) => {
@@ -36,26 +34,6 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case HomeMap.GET_SHOPS_ERROR: {
-      return {
-        ...state,
-        isLoading: false,
-        products: action.payload,
-      };
-    }
-    case HomeMap.GET_PRODUCTS_START: {
-      return {
-        ...state,
-        isLoading: true,
-      };
-    }
-    case HomeMap.GET_PRODUCTS_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        products: action.payload,
-      };
-    }
-    case HomeMap.GET_PRODUCTS_ERROR: {
       return {
         ...state,
         isLoading: false,
